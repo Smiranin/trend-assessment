@@ -1,10 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { DetailsComponent } from './details/details.component';
+import { ServerErrorCardComponent } from './components/server-error-card/server-error-card.component';
+import { DetailsComponent } from './pages/details/details.component';
+import { SearchFiltersComponent } from "./pages/search/search-filters/search-filters.component";
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { DetailsComponent } from './details/details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SearchFiltersComponent,
+    HttpClientModule,
+    ServerErrorCardComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
